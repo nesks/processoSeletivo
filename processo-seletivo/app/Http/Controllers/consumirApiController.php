@@ -21,8 +21,6 @@ class consumirApiController extends Controller
             $latestTime=$response['latestTime'];
             $iexRealtimePrice=$response['iexRealtimePrice'];
 
-                session()->flash('mensagem', "Feito com sucesso!");
-
             return view('chamadaApi', ['symbol'=>$symbol,'companyName'=>$companyName,'latestPrice'=>$latestPrice,'latestTime'=>$latestTime, 'iexRealtimePrice'=>$iexRealtimePrice]);
         }else{
             session()->flash('mensagem', "Erro ao efetuar requisição, simbolo não encontrado!");
@@ -45,6 +43,25 @@ class consumirApiController extends Controller
     public function create()
     {
         return view();
+    }
+
+
+
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //dd($request);
+
+        ConsumirAPI::create($request->all());
+        session()->flash('mensagem', "Cadastrado com sucesso!");
+        return redirect()->route('principal');
+
     }
 
 }

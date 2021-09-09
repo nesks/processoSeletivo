@@ -23,3 +23,5 @@ Route::get('/', function () {
 
 Route::get('/consumirapi','consumirApiController@index')->name('api');
 
+Route::resource('consumir', consumirApiController::class);
+
