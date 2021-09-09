@@ -16,7 +16,11 @@
     <title>Principal</title>
 </head>
 <body>
-
+        @if(session('mensagem'))
+            <div class="alert alert-success">
+            {{session('mensagem')}}
+            </div>
+        @endif
 <div class="container">
 <div class="row justify-content-center align-items-center">
         <div class="d-flex flex-lg-row flex-column-reverse">
@@ -29,8 +33,7 @@
                     </div>
                                     <div class="bottom text-center mb-5">
 
-                 <form action="/" method="post">
-                @csrf
+                 <form action="{{route('api')}}" method="get">
 
                 <div class="row justify-content-md-center">
                 <div class="col-10">
@@ -46,10 +49,12 @@
 
             </div>
 
+
         @yield('conteudo')
 
         </div>
     </div>
+
 </div>
 
 

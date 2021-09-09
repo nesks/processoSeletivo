@@ -1,0 +1,36 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateConsumirAPISTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('consumir_a_p_i_s', function (Blueprint $table) {
+            $table->id();
+            $table->string('symbol');
+            $table->string('companyName');
+            $table->double('latestPrice');
+            $table->string('latestTime');
+            $table->double('iexRealtimePrice');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('consumir_a_p_i_s');
+    }
+}

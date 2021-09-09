@@ -1,5 +1,8 @@
 <?php
 
+
+
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('inicio');
 })->name('principal');
+
+
+Route::get('/consumirapi','consumirApiController@index')->name('api');
+

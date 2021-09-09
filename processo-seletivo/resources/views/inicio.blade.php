@@ -2,6 +2,7 @@
 
 @section('conteudo')
 
+
 <div class="card card2 col-8 ">
                 <div class="my-auto mx-md-5 px-md-5 right">
                 <h3 class="text-dark">Lorem Ipsum </h3> <small class="text-dark">What is Lorem Ipsum?
